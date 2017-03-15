@@ -52,7 +52,11 @@
 
     // If the source individual isn't also the individual (Patient 0)
     if(transmission.individual != transmission.source_individual) {
-      edges.push({from: transmission.source_individual, to: transmission.individual})
+      edges.push({
+        from: transmission.source_individual,
+        to: transmission.individual,
+        label: transmission.location + "\n" + transmission.date_of_infection
+      })
     }
 
   });
